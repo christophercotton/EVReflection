@@ -57,7 +57,7 @@ final public class EVReflection {
                 if mapping != nil {
                     original = properties[mapping!] as? NSObject
                 }
-                if let dictValue = dictionaryAndArrayConversion(types[k as! String], original: original, dictValue: v) {
+                if let dictValue = dictionaryAndArrayConversion(types[(mapping ?? k) as! String], original: original, dictValue: v) {
                     if let key:String = keyMapping[k as! String] {
                         setObjectValue(anyObject, key: key, value: dictValue, typeInObject: types[key])
                     } else {

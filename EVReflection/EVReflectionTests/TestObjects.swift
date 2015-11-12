@@ -110,3 +110,11 @@ public class TestObject6: EVObject {
     }
 }
 
+/**
+For testing sub objects
+*/
+public class TestObject7: EVObject {
+    // in json this will be "test-objects"
+    var test_objects: [TestObject] = []
+}
+

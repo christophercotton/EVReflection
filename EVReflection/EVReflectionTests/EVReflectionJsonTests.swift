@@ -183,7 +183,12 @@ class EVReflectionJsonTests: XCTestCase {
         XCTAssertEqual(a.myBool, true, "myBool should contain true")
     }
 
-    
+    func testSubObjectMapping() {
+        let json:String = "{\"test-objects\":[{\"objectValue\":\"test\"}]}"
+        let a = TestObject7(json: json)
+        XCTAssertEqual(a.test_objects.count, 1, "test_objects should contain 1")
+        XCTAssertEqual(a.test_objects[0].objectValue, "test", "objectValue should have test")
+    }
 }
 
 
